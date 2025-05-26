@@ -1,8 +1,8 @@
 package level2.exercise1.classData;
 
-import level2.exercise1.exceptions.readCharException;
-import level2.exercise1.exceptions.readStringException;
-import level2.exercise1.exceptions.readYesOrNotException;
+import level2.exercise1.exceptions.ReadCharException;
+import level2.exercise1.exceptions.ReadStringException;
+import level2.exercise1.exceptions.ReadYesOrNotException;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -86,7 +86,7 @@ public class Input {
         }
         return number;
     }
-    public static char readChar(String message, Scanner scanner) throws readCharException {
+    public static char readChar(String message, Scanner scanner) throws ReadCharException {
         char character;
         boolean flag = false;
         while (true) {
@@ -98,18 +98,18 @@ public class Input {
                     if(Character.isLetter(character)) {
                         break;
                     }else {
-                        throw new readCharException("Error: Invalid character, entre a letter.");
+                        throw new ReadCharException("Error: Invalid character, entre a letter.");
                     }
                 }else {
-                    throw new readCharException("Invalid input. Please enter a valid character.");
+                    throw new ReadCharException("Invalid input. Please enter a valid character.");
                 }
-            }catch (readCharException e){
+            }catch (ReadCharException e){
                 System.out.println("Error: " + e.getMessage());
             }
         }
         return character;
     }
-    public static String readString(String message, Scanner scanner) throws readStringException {
+    public static String readString(String message, Scanner scanner) throws ReadStringException {
         String input;
 
         while (true) {
@@ -121,9 +121,9 @@ public class Input {
 
                     break;
                 }else  {
-                    throw new readStringException("Invalid input. Please enter a valid string.");
+                    throw new ReadStringException("Invalid input. Please enter a valid string.");
                 }
-            }catch (readStringException e){
+            }catch (ReadStringException e){
                 System.out.println("Error: " + e.getMessage());
             }
         }
@@ -131,7 +131,7 @@ public class Input {
         return input;
     }
 
-    public static boolean readYesNo(String message, Scanner scanner) throws readYesOrNotException {
+    public static boolean readYesNo(String message, Scanner scanner) throws ReadYesOrNotException {
         boolean flag;
 
         while (true) {
@@ -144,9 +144,9 @@ public class Input {
                 } else if (input.equals("N")) {
 
                 }else {
-                    throw new readYesOrNotException("Invalid input. Please enter a valid Y or N.");
+                    throw new ReadYesOrNotException("Invalid input. Please enter a valid Y or N.");
                 }
-            }catch (readYesOrNotException e){
+            }catch (ReadYesOrNotException e){
                 System.out.println("Error: " + e.getMessage());
             }
         }

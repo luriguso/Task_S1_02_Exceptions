@@ -46,9 +46,14 @@ public class CinemaManagement {
 
     public  void showSeatsPerson(Scanner scanner){
         Scanner sc = new Scanner(System.in);
+        SeatManagement seatMan = cinema.getSeatManagement();
+        if (seatMan.getSeats().isEmpty()){
+            System.out.println("There are no reservations . Press Enter to continue.");
+            sc.nextLine();
+            return;
+        }
         System.out.println("Enter person's name: ");
         String name = scanner.nextLine();
-        SeatManagement seatMan = cinema.getSeatManagement();
         ArrayList<Seat> seatsToPerson = new  ArrayList<>();
         for (Seat seat : seatMan.getSeats()) {
             if (seat.getReservationName().equals(name)) {
@@ -91,6 +96,11 @@ public class CinemaManagement {
 
     public void cancelReservation(Scanner scanner){
         Scanner sc = new Scanner(System.in);
+        if(cinema.getSeatManagement().getSeats().isEmpty()){
+            System.out.println("There are no reservations . Press Enter to continue.");
+            sc.nextLine();
+            return;
+        }
         int rowNumber = enterRow(scanner);
         int seatNumber = enterSeat(scanner);
 
@@ -106,6 +116,11 @@ public class CinemaManagement {
     }
 
     public void cancelReservationPerson(Scanner scanner){
+        if(cinema.getSeatManagement().getSeats().isEmpty()){
+            System.out.println("There are no reservations . Press Enter to continue.");
+            scanner.nextLine();
+            return;
+        }
         String reservedSeat = enterPerson(scanner);
         ArrayList<Seat> seatsToRemove = new ArrayList<>();
         for(Seat seat : cinema.getSeatManagement().getSeats()) {

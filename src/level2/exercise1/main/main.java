@@ -1,14 +1,14 @@
 package level2.exercise1.main;
 
 import level2.exercise1.classData.Input;
-import level2.exercise1.exceptions.readCharException;
-import level2.exercise1.exceptions.readStringException;
-import level2.exercise1.exceptions.readYesOrNotException;
+import level2.exercise1.exceptions.ReadCharException;
+import level2.exercise1.exceptions.ReadStringException;
+import level2.exercise1.exceptions.ReadYesOrNotException;
 
 import java.util.Scanner;
 
 public class main {
-    public static void main(String[] args) throws readCharException, readStringException, readYesOrNotException {
+    public static void main(String[] args) throws ReadCharException, ReadStringException, ReadYesOrNotException {
         Scanner scanner = new Scanner(System.in);
 
         byte age = Input.readByte("Enter your age", scanner);

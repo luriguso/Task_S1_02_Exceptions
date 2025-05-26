@@ -62,6 +62,7 @@ public class Cinema {
                 }
             }catch (InputMismatchException e){
                 System.out.println("Invalid seat number");
+                sc.nextLine();
             }
         }
     }
@@ -88,7 +89,6 @@ public class Cinema {
                     process = false;
                     System.out.println("Thank you for using this program.");
                 }
-
                 break;
                 default:
                     System.out.println("Invalid choice");
